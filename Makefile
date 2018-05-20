@@ -45,6 +45,6 @@ sphinx:
 	@cd .sphinx; make html; make man; make text
 
 docs_setup:
-	@cd docs; cp -rf ../.sphinx/_build/text/*.txt ./; cp -rf ../.sphinx/_build/html ./; cp -rf ../.sphinx/_build/man ./
+	@cd docs; cp -rf ../.sphinx/_build/html/* ./; cp -rf ../.sphinx/_build/man ./
 
 docs: sphinx docs_setup

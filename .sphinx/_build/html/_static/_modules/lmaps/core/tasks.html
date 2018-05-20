@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>lmaps.core.tasks &#8212; lmaps  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for lmaps.core.tasks</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Tasks that can be run on workers.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="no_work"><a class="viewcode-back" href="../../../lmaps.core.html#lmaps.core.tasks.no_work">[docs]</a><span class="k">def</span> <span class="nf">no_work</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Do nothing.</span>
+<span class="sd">  :param context: The runner&#39;s instance</span>
+<span class="sd">  :return: dict</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">return</span> <span class="p">{}</span></div>
+
+
+<div class="viewcode-block" id="error_message"><a class="viewcode-back" href="../../../lmaps.core.html#lmaps.core.tasks.error_message">[docs]</a><span class="k">def</span> <span class="nf">error_message</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Cannot remember, maybe I was starting to setup a logging facility?</span>
+<span class="sd">  :param context: The runner&#39;s instance</span>
+<span class="sd">  :param msg:</span>
+<span class="sd">  :return:</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">return</span> <span class="n">msg</span></div>
+
+
+<div class="viewcode-block" id="stop_worker_thread"><a class="viewcode-back" href="../../../lmaps.core.html#lmaps.core.tasks.stop_worker_thread">[docs]</a><span class="k">def</span> <span class="nf">stop_worker_thread</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Inform a worker that it needs to die.</span>
+<span class="sd">  :param context: The runner&#39;s instance</span>
+<span class="sd">  :return:</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">context</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+  <span class="k">return</span> <span class="p">{}</span></div>
+
+
+<div class="viewcode-block" id="get_worker_config"><a class="viewcode-back" href="../../../lmaps.core.html#lmaps.core.tasks.get_worker_config">[docs]</a><span class="k">def</span> <span class="nf">get_worker_config</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Get the config from the worker&#39;s perspective.</span>
+<span class="sd">  :param context: The runner&#39;s instance</span>
+<span class="sd">  :return:</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">context</span><span class="o">.</span><span class="n">config</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">client_message</span><span class="p">(</span><span class="s1">&#39;No configuration has been injected into this worker&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_worker_units"><a class="viewcode-back" href="../../../lmaps.core.html#lmaps.core.tasks.get_worker_units">[docs]</a><span class="k">def</span> <span class="nf">get_worker_units</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Get installed units from the worker&#39;s perspective.</span>
+<span class="sd">  :param context: The runner&#39;s instance</span>
+<span class="sd">  :return:</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">context</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">client_message</span><span class="p">(</span><span class="s1">&#39;No configuration has been injected into this worker&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_worker_units_instances"><a class="viewcode-back" href="../../../lmaps.core.html#lmaps.core.tasks.get_worker_units_instances">[docs]</a><span class="k">def</span> <span class="nf">get_worker_units_instances</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Get instances of a unit based on the unit&#39;s name.</span>
+<span class="sd">  :param context: The runner&#39;s instance</span>
+<span class="sd">  :param name: Name of unit</span>
+<span class="sd">  :return:</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="n">unit</span> <span class="o">=</span> <span class="n">get_unit_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_data_type_by_name</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;data_type&#39;</span><span class="p">])(</span>
+      <span class="n">store_root</span><span class="o">=</span><span class="n">unit</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;store_root&#39;</span><span class="p">],</span>
+      <span class="n">store_key</span><span class="o">=</span><span class="n">unit</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;store_key&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">client_message</span><span class="p">(</span><span class="s1">&#39;Instances:&#39;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">state</span><span class="p">())</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">client_message</span><span class="p">(</span><span class="s1">&#39;Cannot&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="rollback_worker_units_instances"><a class="viewcode-back" href="../../../lmaps.core.html#lmaps.core.tasks.rollback_worker_units_instances">[docs]</a><span class="k">def</span> <span class="nf">rollback_worker_units_instances</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Perform a rollback on the workers local datastore.</span>
+<span class="sd">  :param context: The runner&#39;s instance</span>
+<span class="sd">  :param name: Name of unit</span>
+<span class="sd">  :return:</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">unit</span> <span class="o">=</span> <span class="n">get_unit_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="n">get_data_type_by_name</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;data_type&#39;</span><span class="p">])(</span>
+    <span class="n">store_root</span><span class="o">=</span><span class="n">unit</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;store_root&#39;</span><span class="p">],</span>
+    <span class="n">store_key</span><span class="o">=</span><span class="n">unit</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;store_key&#39;</span><span class="p">]</span>
+  <span class="p">)</span>
+  <span class="n">before</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">state</span><span class="p">()</span>
+  <span class="n">removing</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+  <span class="n">after</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">state</span><span class="p">()</span>
+  <span class="k">if</span> <span class="n">removing</span> <span class="o">==</span> <span class="p">[]:</span>
+    <span class="k">return</span> <span class="n">client_message</span><span class="p">(</span><span class="s1">&#39;Nothing to rollback, the instance is empty&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">client_message</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;removing&quot;</span><span class="p">:</span> <span class="n">removing</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;before&quot;</span><span class="p">:</span> <span class="n">before</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;after&quot;</span><span class="p">:</span> <span class="n">after</span><span class="p">}])</span></div>
+
+
+<div class="viewcode-block" id="validate_instance"><a class="viewcode-back" href="../../../lmaps.core.html#lmaps.core.tasks.validate_instance">[docs]</a><span class="k">def</span> <span class="nf">validate_instance</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">unit_name</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Determine if a dict is a valid instance request based on the schema of the unit</span>
+<span class="sd">  as well as apply defaults from the schema.</span>
+<span class="sd">  :param context: The runner&#39;s instance</span>
+<span class="sd">  :param unit_name: String name of unit</span>
+<span class="sd">  :param instance: Dict the instance to validate</span>
+<span class="sd">  :return: Dict the valid and default-mixed-in instance</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">unit</span> <span class="o">=</span> <span class="n">get_unit_by_name</span><span class="p">(</span><span class="n">unit_name</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+  <span class="n">instance</span> <span class="o">=</span> <span class="n">validate_unit_instance</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">instance</span></div>
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Author.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
