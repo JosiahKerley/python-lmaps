@@ -454,7 +454,10 @@
       <g
          transform="matrix(0.04154137,0,0,0.04154137,34.595601,31.052771)"
          id="g4561"
-         style="fill:#ffffff">
+         style="fill:#ffffff"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <circle
            style="fill:#000000"
            cx="300"
@@ -475,7 +478,10 @@
       </g>
       <g
          transform="matrix(0.04021701,0,0,0.04021701,72.112545,40.636934)"
-         id="ELLIPSE_4_">
+         id="ELLIPSE_4_"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <g
            id="XMLID_59_">
           <path
@@ -719,7 +725,10 @@
       </g>
       <g
          transform="matrix(0.09352845,0,0,0.09352845,117.97033,64.033794)"
-         id="1">
+         id="1"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <path
            style="opacity:0.51999996;fill:url(#6);stroke-width:2.1500001;stroke-linecap:round;stroke-linejoin:bevel;filter:url(#7)"
            inkscape:connector-curvature="0"
@@ -747,7 +756,10 @@
       <g
          transform="matrix(0.33406156,0,0,0.33406156,43.059961,121.81066)"
          id="layer1-2"
-         inkscape:label="Calque 1">
+         inkscape:label="Calque 1"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <path
            id="path8364"
            style="fill:#315b09"
@@ -830,7 +842,10 @@
       <g
          id="layer1-61"
          inkscape:label="Capa 1"
-         transform="matrix(0.07545456,0,0,0.07545456,50.519084,58.351614)">
+         transform="matrix(0.07545456,0,0,0.07545456,50.519084,58.351614)"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <path
            id="path2996"
            style="fill:#ed171a"
@@ -845,7 +860,10 @@
       <g
          transform="matrix(0.33406156,0,0,0.33406156,85.738801,121.71043)"
          id="layer1-2-6"
-         inkscape:label="Calque 1">
+         inkscape:label="Calque 1"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <path
            id="path8364-9"
            style="fill:#315b09"
@@ -927,7 +945,10 @@
       </g>
       <g
          transform="matrix(0.09352845,0,0,0.09352845,113.83227,52.891464)"
-         id="1-2">
+         id="1-2"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <path
            style="opacity:0.51999996;fill:url(#6-0);stroke-width:2.1500001;stroke-linecap:round;stroke-linejoin:bevel;filter:url(#7-6)"
            inkscape:connector-curvature="0"
@@ -954,7 +975,10 @@
       </g>
       <g
          transform="matrix(0.09352845,0,0,0.09352845,125.95134,56.057644)"
-         id="1-7">
+         id="1-7"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <path
            style="opacity:0.51999996;fill:url(#6-2);stroke-width:2.1500001;stroke-linecap:round;stroke-linejoin:bevel;filter:url(#7-4)"
            inkscape:connector-curvature="0"
@@ -984,22 +1008,34 @@
          inkscape:connector-curvature="0"
          id="path5432"
          d="m 59.42129,34.788745 c 12.976718,-6.185028 19.221592,-1.542816 25.112432,4.879977"
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)" />
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100" />
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
          id="path5432-0-5"
          d="m 103.17399,42.656345 c 20.1296,-12.055727 24.69425,0.56819 25.19802,9.670479"
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-6-6)" />
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-6-6)"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100" />
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
          id="path5432-0-9"
          d="m 114.38895,72.608914 c -5.545,17.3133 -18.756333,18.42696 -30.776374,22.05793"
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-6-9)" />
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-6-9)"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100" />
       <g
          id="g10"
-         transform="matrix(0.71550851,0,0,-0.71550851,95.988905,89.116864)">
+         transform="matrix(0.71550851,0,0,-0.71550851,95.988905,89.116864)"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100">
         <g
            id="g12">
           <path
@@ -1084,19 +1120,28 @@
          inkscape:connector-curvature="0"
          id="path5432-0-1"
          d="m 86.323406,104.90671 c 15.615014,0.62723 11.798082,7.67404 9.663054,15.32086"
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-6-0)" />
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-6-0)"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100" />
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
          id="path5432-0-11"
          d="m 65.007416,106.90155 c -8.096062,1.04729 -9.661451,6.71698 -11.395761,13.16929"
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-6-7)" />
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.73201859;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-6-7)"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100" />
       <text
          id="text10921"
          y="60.080692"
          x="26.434364"
          style="font-style:normal;font-weight:normal;font-size:3.0562098px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07640523px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
+         xml:space="preserve"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><tspan
            style="stroke-width:0.07640523px"
            y="60.080692"
            x="26.434364"
@@ -1117,7 +1162,10 @@
          y="63.238792"
          x="67.220161"
          style="font-style:normal;font-weight:normal;font-size:3.0562098px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07640523px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
+         xml:space="preserve"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><tspan
            id="tspan10923-7"
            style="stroke-width:0.07640523px"
            y="63.238792"
@@ -1143,7 +1191,10 @@
          y="56.327553"
          x="140.47099"
          style="font-style:normal;font-weight:normal;font-size:3.0562098px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07640523px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
+         xml:space="preserve"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><tspan
            id="tspan10952-6"
            style="stroke-width:0.07640523px"
            y="56.327553"
@@ -1164,7 +1215,10 @@
          y="84.073067"
          x="119.26897"
          style="font-style:normal;font-weight:normal;font-size:3.0562098px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07640523px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
+         xml:space="preserve"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><tspan
            id="tspan10923-9"
            style="stroke-width:0.07640523px"
            y="84.073067"
@@ -1219,7 +1273,10 @@
          y="143.63869"
          x="41.35981"
          style="font-style:normal;font-weight:normal;font-size:3.0562098px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07640523px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
+         xml:space="preserve"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><tspan
            id="tspan11027-8"
            style="stroke-width:0.07640523px"
            y="143.63869"
@@ -1250,7 +1307,10 @@
          y="143.97168"
          x="115.34965"
          style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
+         xml:space="preserve"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><tspan
            style="stroke-width:0.26458332px"
            y="153.33545"
            x="115.34965"
@@ -1266,7 +1326,10 @@
          y="27.363888"
          x="70.917702"
          style="font-style:normal;font-weight:normal;font-size:5.9149375px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1478734px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
+         xml:space="preserve"
+         inkscape:export-filename="/home/josiah/PycharmProjects/python-lmaps/docs/graphics/sysarch.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><tspan
            id="tspan11027-9"
            style="stroke-width:0.1478734px"
            y="27.363888"
