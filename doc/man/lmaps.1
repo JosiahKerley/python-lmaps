@@ -1,0 +1,802 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "LMAPS" "1" "May 19, 2018" "" "lmaps"
+.SH NAME
+lmaps \- lmaps Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.SH LMAPS PACKAGE
+.SS Subpackages
+.SS lmaps.core package
+.SS Submodules
+.SS lmaps.core.client module
+.INDENT 0.0
+.TP
+.B class lmaps.core.client.Client(*args)
+Bases: \fI\%lmaps.core.manager.Manager\fP
+.sp
+Handles RPC between the shell (or anyother) and the manager
+.INDENT 7.0
+.TP
+.B manager_socket_type = 3
+.UNINDENT
+.INDENT 7.0
+.TP
+.B request(payload)
+Handles the round trip of the payload to the manager and back
+:param payload:
+:return:
+.UNINDENT
+.INDENT 7.0
+.TP
+.B zmq = <module \(aqzmq\(aq from \(aq/home/josiah/PycharmProjects/python\-lmaps/env/lib/python2.7/site\-packages/zmq/__init__.pyc\(aq>
+.UNINDENT
+.UNINDENT
+.SS lmaps.core.config module
+.INDENT 0.0
+.TP
+.B lmaps.core.config.extend_with_default(validator_class)
+Handles applying default values to schemas
+:param validator_class: Draft version class to validate with
+:return: Wrapped validator
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.config.find_config_file()
+Use the list of paths and files above to find a config to use
+:return: Filepath of config file
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.config.load_config(config_file=\(aq/home/josiah/lmaps.yaml\(aq)
+Load the config as a dict from a given config file
+:param config_file: Path to config file
+:return: Dict containing the config
+.UNINDENT
+.SS lmaps.core.daemon module
+.INDENT 0.0
+.TP
+.B class lmaps.core.daemon.Daemon(config)
+Bases: \fBobject\fP
+.sp
+Handles running various threads needed on the host
+.INDENT 7.0
+.TP
+.B config = {}
+.UNINDENT
+.INDENT 7.0
+.TP
+.B make_workers(count=1)
+Create workers
+:param count: Number of workers to create
+.UNINDENT
+.INDENT 7.0
+.TP
+.B manage_workers()
+Maintains the manager and worker threads
+.UNINDENT
+.INDENT 7.0
+.TP
+.B run()
+Start the workers
+.UNINDENT
+.INDENT 7.0
+.TP
+.B start_workers()
+Start the workers in their own threads
+.UNINDENT
+.INDENT 7.0
+.TP
+.B threads = []
+.UNINDENT
+.INDENT 7.0
+.TP
+.B workers = []
+.UNINDENT
+.UNINDENT
+.SS lmaps.core.data module
+.INDENT 0.0
+.TP
+.B class lmaps.core.data.DataStore(*args, **kwargs)
+Bases: \fBobject\fP
+.sp
+Base class that provides the actual structures used by handlers
+.INDENT 7.0
+.TP
+.B args = ()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B exists(data)
+Check if a store already contains data
+:param data: Data to compare
+:return: Boolean as to whether or not it exists
+.UNINDENT
+.INDENT 7.0
+.TP
+.B kwargs = {}
+.UNINDENT
+.INDENT 7.0
+.TP
+.B new_store()
+Create a new store in which to put/get state
+:return: Pointer to the new store
+.UNINDENT
+.INDENT 7.0
+.TP
+.B rollback()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B setup()
+Prepare the instance
+:return:
+.UNINDENT
+.INDENT 7.0
+.TP
+.B state()
+Get the summary of the current state
+:return: Dict of state summary
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class lmaps.core.data.YamlFile(*args, **kwargs)
+Bases: \fI\%lmaps.core.data.DataStore\fP
+.sp
+DataStore based on using merged YAML files to determine state
+.INDENT 7.0
+.TP
+.B current_dir = \(aqcurrent\(aq
+.UNINDENT
+.INDENT 7.0
+.TP
+.B exists(data)
+Check if data is already in a store based on a sample
+:param data:
+:return: Boolean as to whether or not the data is already in a store
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_current_store_dir()
+Get the filepath to the “current” data stores
+:return: String filepath
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_rollback_store_dir()
+Get the filepath to the “rollback” data stores
+:return: String filepath
+.UNINDENT
+.INDENT 7.0
+.TP
+.B new_store(data)
+Provision a new store
+:param data: Dict of instamce
+:return: String filepath
+.UNINDENT
+.INDENT 7.0
+.TP
+.B rollback()
+Rollback the latest change by moving the last store from the “current” directory to the “rollback” directory
+:return: Dict of the data rolled back
+.UNINDENT
+.INDENT 7.0
+.TP
+.B rollback_dir = \(aqrollback\(aq
+.UNINDENT
+.INDENT 7.0
+.TP
+.B setup()
+Setup this instance to work with yaml files
+.UNINDENT
+.INDENT 7.0
+.TP
+.B state()
+Get the current summary of the state
+:return: Dict of state
+.UNINDENT
+.INDENT 7.0
+.TP
+.B store_files()
+Enumerate the “current” store’s files
+:return: List of filepaths
+.UNINDENT
+.INDENT 7.0
+.TP
+.B store_key = \(aqroot\(aq
+.UNINDENT
+.INDENT 7.0
+.TP
+.B store_root = None
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class lmaps.core.data.YamlKeyDict(*args, **kwargs)
+Bases: \fI\%lmaps.core.data.YamlKeyList\fP
+.sp
+DataStore based on using YAML files to present state as a dict of dicts
+.INDENT 7.0
+.TP
+.B state(reverse=False)
+DataStore based on using YAML files to present state as a merged dict
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class lmaps.core.data.YamlKeyList(*args, **kwargs)
+Bases: \fI\%lmaps.core.data.YamlList\fP
+.sp
+DataStore based on using YAML files to present state as a dict of dicts
+.INDENT 7.0
+.TP
+.B exists(data)
+Check if data is already in a store based on a sample
+:param data:
+:return: Boolean as to whether or not the data is already in a store
+.UNINDENT
+.INDENT 7.0
+.TP
+.B state(reverse=False)
+DataStore based on using YAML files to present state as a list of dicts
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class lmaps.core.data.YamlList(*args, **kwargs)
+Bases: \fI\%lmaps.core.data.YamlFile\fP
+.sp
+DataStore based on using YAML files to present state as a list of dicts
+.INDENT 7.0
+.TP
+.B exists(data)
+Check if data is already in a store based on a sample
+:param data:
+:return: Boolean as to whether or not the data is already in a store
+.UNINDENT
+.INDENT 7.0
+.TP
+.B state(reverse=False)
+Get the current summary of the state
+:param reverse: whether or not the state needs to be reversed
+:return: List of instances
+.UNINDENT
+.UNINDENT
+.SS lmaps.core.handlers module
+.INDENT 0.0
+.TP
+.B class lmaps.core.handlers.Handler(**kwargs)
+Bases: \fBobject\fP
+.sp
+Base class for handling /anything/
+.INDENT 7.0
+.TP
+.B context = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B setup()
+Handles setting up this instance
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class lmaps.core.handlers.ManagerHandler(**kwargs)
+Bases: \fI\%lmaps.core.handlers.Handler\fP
+.sp
+The handler used by the manager to get requests from clients and farm out work for workers
+.INDENT 7.0
+.TP
+.B client_request(request)
+Handle an incoming request from a client
+:param request: The request from the client
+:return: A response to the client
+.UNINDENT
+.INDENT 7.0
+.TP
+.B create_or_apply(request)
+Handle a request from the client to create or apply instances
+:param request: The request from the client
+:return: A response to the client
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class lmaps.core.handlers.UnitHandler(**kwargs)
+Bases: \fI\%lmaps.core.handlers.Handler\fP
+.sp
+Base class for unit handlers
+.UNINDENT
+.SS lmaps.core.manager module
+.INDENT 0.0
+.TP
+.B class lmaps.core.manager.Manager(worker_connection_uri, *args)
+Bases: \fI\%lmaps.core.worker.Worker\fP
+.sp
+In charge of listening to clients and passing the requests to a handler
+.INDENT 7.0
+.TP
+.B manager_socket_type = 4
+.UNINDENT
+.INDENT 7.0
+.TP
+.B run_task(runnable, *args, **kwargs)
+Takes a “runnable” method and args, marshalls them, and sends them
+to a worker via the worker socket.  After sending, this will wait
+for a response from the worker as the return from the runnable.
+:param runnable: An unbound method/function/whatever
+:return: return from the runnable that executed on the worker
+.UNINDENT
+.INDENT 7.0
+.TP
+.B setup_args(args)
+Make sure we can connect to workers and bind our socket for clients
+:param args:
+:return:
+.UNINDENT
+.INDENT 7.0
+.TP
+.B socket_type = 3
+.UNINDENT
+.INDENT 7.0
+.TP
+.B start()
+Begin serving
+.UNINDENT
+.INDENT 7.0
+.TP
+.B zmq = <module \(aqzmq\(aq from \(aq/home/josiah/PycharmProjects/python\-lmaps/env/lib/python2.7/site\-packages/zmq/__init__.pyc\(aq>
+.UNINDENT
+.UNINDENT
+.SS lmaps.core.shell module
+.INDENT 0.0
+.TP
+.B lmaps.core.shell.get_parser()
+Get shell args for command line usage
+:return: argparse namespace
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.shell.print_response(msg, format=\(aqdict\(aq)
+Prints dictionaries in a human readable way
+:param msg: message to make human readable
+:param format: How to format the msg (i.e. coercion strategy)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.shell.start()
+Start the CLI
+:param args: Argparse namespace
+.UNINDENT
+.SS lmaps.core.tasks module
+.sp
+Tasks that can be run on workers.
+.INDENT 0.0
+.TP
+.B lmaps.core.tasks.error_message(context, msg)
+Cannot remember, maybe I was starting to setup a logging facility?
+:param context: The runner’s instance
+:param msg:
+:return:
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.tasks.get_worker_config(context)
+Get the config from the worker’s perspective.
+:param context: The runner’s instance
+:return:
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.tasks.get_worker_units(context)
+Get installed units from the worker’s perspective.
+:param context: The runner’s instance
+:return:
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.tasks.get_worker_units_instances(context, name)
+Get instances of a unit based on the unit’s name.
+:param context: The runner’s instance
+:param name: Name of unit
+:return:
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.tasks.no_work(context)
+Do nothing.
+:param context: The runner’s instance
+:return: dict
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.tasks.rollback_worker_units_instances(context, name)
+Perform a rollback on the workers local datastore.
+:param context: The runner’s instance
+:param name: Name of unit
+:return:
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.tasks.stop_worker_thread(context)
+Inform a worker that it needs to die.
+:param context: The runner’s instance
+:return:
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.tasks.validate_instance(context, unit_name, instance)
+Determine if a dict is a valid instance request based on the schema of the unit
+as well as apply defaults from the schema.
+:param context: The runner’s instance
+:param unit_name: String name of unit
+:param instance: Dict the instance to validate
+:return: Dict the valid and default\-mixed\-in instance
+.UNINDENT
+.SS lmaps.core.utils module
+.sp
+Handy functions and objects
+.INDENT 0.0
+.TP
+.B class lmaps.core.utils.OpenThread(method, args=None)
+Bases: \fI\%lmaps.core.utils.Threader\fP
+.sp
+Same as above, but lets a thread keep running
+after exiting the \fIwith\fP statement.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class lmaps.core.utils.Threader(method, args=None)
+Bases: \fBobject\fP
+.sp
+A basic thread manager that I reuse so much
+I should just polish it up and throw it into PyPI.
+More or less lets you run a “runnable” in a thread
+while something meaningful is happening in the main
+thread and kills it when complete.  I usually use it
+for things like API persistence on unrully/expirary
+endpoints that I don’t want my interact logic to
+have to constantly poll something.  i.e.:
+
+.nf
+\(ga\(ga
+.fi
+\(ga
+def maintain_connection_to_some_api():
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B while not amConnectedToSomeAPI:
+client = connectBackToTheStoopidThing(with_these,credentials)
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B with Threader(maintain_connection_to_some_api) as API:
+API.client(“don’t worry”)
+API.client(“be happy”)
+.UNINDENT
+.sp
+
+.nf
+\(ga\(ga
+.fi
+\(ga
+after the last \fIAPI.client()\fP call in that example,
+\fImaintain_connection_to_some_api()\fP is reaped silently.
+.INDENT 7.0
+.TP
+.B args = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B isAlive()
+Check to see if the thread is alive still.
+:return: Bool whether or not it is
+.UNINDENT
+.INDENT 7.0
+.TP
+.B method = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B start()
+Start the thread
+:return: Bool whether the thread is still alive
+.UNINDENT
+.INDENT 7.0
+.TP
+.B stop()
+Stop the thread
+:return: Bool if the assertion passes of course ;)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B thread = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B threading = <module \(aqthreading\(aq from \(aq/usr/lib64/python2.7/threading.pyc\(aq>
+.UNINDENT
+.INDENT 7.0
+.TP
+.B time = <module \(aqtime\(aq from \(aq/home/josiah/PycharmProjects/python\-lmaps/env/lib64/python2.7/lib\-dynload/timemodule.so\(aq>
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.utils.client_message(message, level=0, extra={})
+Create a properly formatted dict that can be handled
+by the client shell when the manager replies.
+:param message: String the main message
+:param level: Int more or the exit code you wish the client to experience
+:param extra: Dict extra debug info if needed
+:return: Dict the message to reply to the client with
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.utils.get_data_type_by_name(name)
+For a given name, get a datatype.
+For example this is used to get the datastore instance
+used by the handler based on the config in the unit.
+:param name: String the datastore’s classname
+:return: The class
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.utils.get_unit_by_name(name, config=None)
+For a given config, return a unit by its name.
+:param name: String name of the unit
+:param config: Dict the config to compare
+:return: Dict the unit found
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.core.utils.validate_unit_instance(instance, unit)
+Locally validate and mixin schema defaults
+for a given instance by the unit to be applied.
+:param instance: Dict the instance to try
+:param unit: Dict the unit containing the schema
+:return: Dict the valid, mixed instance or an error containing what and why the instance is not valid
+.UNINDENT
+.SS lmaps.core.worker module
+.INDENT 0.0
+.TP
+.B class lmaps.core.worker.Worker(worker_connection_uri, *args)
+Bases: \fBobject\fP
+.sp
+A generic worker
+.INDENT 7.0
+.TP
+.B cloud = <module \(aqcloud\(aq from \(aq/home/josiah/PycharmProjects/python\-lmaps/env/lib/python2.7/site\-packages/cloud/__init__.pyc\(aq>
+.UNINDENT
+.INDENT 7.0
+.TP
+.B pickle = <module \(aqpickle\(aq from \(aq/usr/lib64/python2.7/pickle.pyc\(aq>
+.UNINDENT
+.INDENT 7.0
+.TP
+.B running = True
+.UNINDENT
+.INDENT 7.0
+.TP
+.B setup_args(args)
+Not used here, but useful for more verbose workers
+:param args:
+:return:
+.UNINDENT
+.INDENT 7.0
+.TP
+.B socket_type = 4
+.UNINDENT
+.INDENT 7.0
+.TP
+.B start()
+Bind the worker socket and wait for work
+.UNINDENT
+.INDENT 7.0
+.TP
+.B stop()
+Stop the private main loop logically
+:return:
+.UNINDENT
+.INDENT 7.0
+.TP
+.B time = <module \(aqtime\(aq from \(aq/home/josiah/PycharmProjects/python\-lmaps/env/lib64/python2.7/lib\-dynload/timemodule.so\(aq>
+.UNINDENT
+.INDENT 7.0
+.TP
+.B worker_connection_uri = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B zmq = <module \(aqzmq\(aq from \(aq/home/josiah/PycharmProjects/python\-lmaps/env/lib/python2.7/site\-packages/zmq/__init__.pyc\(aq>
+.UNINDENT
+.UNINDENT
+.SS Module contents
+.SS lmaps.plugins package
+.SS Submodules
+.SS lmaps.plugins.ansible_playbook module
+.sp
+Since the arguments of the config are not validated (IoC reasons)
+at runtime, a schema needs to be declared here so that the unit
+can be validated.  ALL plugins will need some schema declared
+so that the handler can make sure what is being asked is valid.
+.sp
+The bare minimum is:
+\fB\(ga
+args_schema = {}
+\(ga\fP
+.INDENT 0.0
+.INDENT 3.5
+to validate the unit config:
+.UNINDENT
+.UNINDENT
+.sp
+
+.nf
+\(ga\(ga
+.fi
+\(ga
+handler:
+.INDENT 0.0
+.INDENT 3.5
+name: some_name
+type: the_name_of_this_file_minus_the_py
+args:
+.INDENT 0.0
+.INDENT 3.5
+whatever: you put here
+gets: validated by
+args_schema: declared in the plugin
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+
+.nf
+\(ga\(ga
+.fi
+
+.nf
+\(ga
+.fi
+
+.INDENT 0.0
+.INDENT 3.5
+If a plugin needs to hand instance operations (as this example does)
+.UNINDENT
+.UNINDENT
+.sp
+there needs to be \fIinstance_create\fP, \fIinstance_delete\fP and \fIinstance_apply\fP
+hook functions declared that can pass UnitHandler kwargs to your handler class.
+.INDENT 0.0
+.INDENT 3.5
+Upon construction, the instance can be had in \fIkwargs[‘instance’]\fP
+.UNINDENT
+.UNINDENT
+.sp
+and the unit can be had in \fIkwargs[‘unit’]\fP\&.  The instance gives you
+the “what”, the unit gives you the “where”, and you just need to supply the “how”.
+.INDENT 0.0
+.INDENT 3.5
+Once you get to the point where you need an actual “something” to occur, work can
+.UNINDENT
+.UNINDENT
+.sp
+be dispatched and received from \fIself.runner\fP in your UnitHandler.
+.INDENT 0.0
+.TP
+.B class lmaps.plugins.ansible_playbook.AnsiblePlaybook(**kwargs)
+Bases: \fBlmaps.core.handlers.Handler\fP
+.sp
+Handles ansible\-playbook type units
+.INDENT 7.0
+.TP
+.B apply()
+Handles when a client wants to “apply” an instance
+:return: Boolean the fact that it was created (exceptions get propagated back to the clients)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B create()
+Handles when a client wants to “create” an instance
+:return: Boolean the fact that it was created (exceptions get propagated back to the clients)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B playbook = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B preflight_checks()
+Makes sure things are all good before trying to use this handler
+.UNINDENT
+.INDENT 7.0
+.TP
+.B results = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B setup()
+Configure this handler
+:return:
+.UNINDENT
+.INDENT 7.0
+.TP
+.B varfile = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B write_varsfile()
+Write the instance to an ansible vars file.
+:return: Tempfile handle/anchor/link/cursor/semaphore/refint/ioctl/whatever
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.plugins.ansible_playbook.instance_apply(**kwargs)
+This is the main incoming hook from the Manager Handler wanting an “apply” to occur
+:return: A message for the client
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.plugins.ansible_playbook.instance_create(**kwargs)
+This is the main incoming hook from the Manager Handler wanting a “create” to occur
+:return: A message for the client
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.plugins.ansible_playbook.instance_delete(**kwargs)
+This is unsopperted at the moment
+:return: A message for the client
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lmaps.plugins.ansible_playbook.run_playbook(*args, **kwargs)
+.UNINDENT
+.SS Module contents
+.SS Module contents
+.INDENT 0.0
+.IP \(bu 2
+genindex
+.IP \(bu 2
+modindex
+.IP \(bu 2
+search
+.UNINDENT
+.SH AUTHOR
+Author
+.SH COPYRIGHT
+2018, Author
+.\" Generated by docutils manpage writer.
+.

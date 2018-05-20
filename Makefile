@@ -44,7 +44,7 @@ enter: vagrant-up
 sphinx:
 	@cd .sphinx; make html; make man; make text
 
-doc_links:
-	@cd doc; ln -sf ../.sphinx/_build/text/*.txt ./; ln -sf ../.sphinx/_build/html ./; ln -sf ../.sphinx/_build/man ./
+doc_setup:
+	@cd doc; cp -rf ../.sphinx/_build/text/*.txt ./; cp -rf ../.sphinx/_build/html ./; cp -rf ../.sphinx/_build/man ./
 
-docs: sphinx doc_links
+docs: sphinx doc_setup
