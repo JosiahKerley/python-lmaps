@@ -57,3 +57,8 @@ docs_setup:
 	    xargs -I {} sed -i 's/_static/static/g' {}
 
 docs: sphinx docs_setup man_setup
+
+distribute_pypi:
+	@python setup.py sdist upload -r lmaps
+
+distribute: distribute_pypi
