@@ -1,4 +1,4 @@
-.PHONY: clean veryclean test enter install
+.PHONY: clean veryclean test enter install docs
 formats=zip
 ifeq ($(OS),Windows_NT)
   formats=msi,zip
@@ -40,3 +40,11 @@ vagrant-up: .vagrant/up.flag
 
 enter: vagrant-up
 	@vagrant ssh -c 'sudo su'
+
+sphinx:
+	@cd .sphinx; make html; make man; make text
+
+doc_links:
+	@cd doc; ln -sf ../.sphinx/_build/text/*.txt ./; ln -sf ../.sphinx/_build/html ./; ln -sf ../.sphinx/_build/man ./
+
+docs: sphinx doc_links

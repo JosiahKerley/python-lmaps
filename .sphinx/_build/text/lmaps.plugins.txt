@@ -1,0 +1,103 @@
+lmaps.plugins package
+*********************
+
+
+Submodules
+==========
+
+
+lmaps.plugins.ansible_playbook module
+=====================================
+
+Since the arguments of the config are not validated (IoC reasons) at
+runtime, a schema needs to be declared here so that the unit can be
+validated.  ALL plugins will need some schema declared so that the
+handler can make sure what is being asked is valid.
+
+The bare minimum is: "` args_schema = {} `"
+
+   to validate the unit config:
+
+>>``<<` handler:
+
+   name: some_name type: the_name_of_this_file_minus_the_py args:
+
+      whatever: you put here gets: validated by args_schema: declared
+      in the plugin
+
+>>``<<>>`<<
+
+   If a plugin needs to hand instance operations (as this example
+   does)
+
+there needs to be *instance_create*, *instance_delete* and
+*instance_apply* hook functions declared that can pass UnitHandler
+kwargs to your handler class.
+
+   Upon construction, the instance can be had in *kwargs[‘instance’]*
+
+and the unit can be had in *kwargs[‘unit’]*.  The instance gives you
+the “what”, the unit gives you the “where”, and you just need to
+supply the “how”.
+
+   Once you get to the point where you need an actual “something” to
+   occur, work can
+
+be dispatched and received from *self.runner* in your UnitHandler.
+
+class lmaps.plugins.ansible_playbook.AnsiblePlaybook(**kwargs)
+
+   Bases: "lmaps.core.handlers.Handler"
+
+   Handles ansible-playbook type units
+
+   apply()
+
+      Handles when a client wants to “apply” an instance :return:
+      Boolean the fact that it was created (exceptions get propagated
+      back to the clients)
+
+   create()
+
+      Handles when a client wants to “create” an instance :return:
+      Boolean the fact that it was created (exceptions get propagated
+      back to the clients)
+
+   playbook = None
+
+   preflight_checks()
+
+      Makes sure things are all good before trying to use this handler
+
+   results = None
+
+   setup()
+
+      Configure this handler :return:
+
+   varfile = None
+
+   write_varsfile()
+
+      Write the instance to an ansible vars file. :return: Tempfile
+      handle/anchor/link/cursor/semaphore/refint/ioctl/whatever
+
+lmaps.plugins.ansible_playbook.instance_apply(**kwargs)
+
+   This is the main incoming hook from the Manager Handler wanting an
+   “apply” to occur :return: A message for the client
+
+lmaps.plugins.ansible_playbook.instance_create(**kwargs)
+
+   This is the main incoming hook from the Manager Handler wanting a
+   “create” to occur :return: A message for the client
+
+lmaps.plugins.ansible_playbook.instance_delete(**kwargs)
+
+   This is unsopperted at the moment :return: A message for the client
+
+lmaps.plugins.ansible_playbook.run_playbook(*args, **kwargs)
+
+
+Module contents
+===============

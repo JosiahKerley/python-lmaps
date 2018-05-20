@@ -1,0 +1,44 @@
+lmaps package
+*************
+
+
+Subpackages
+===========
+
+* lmaps.core package
+
+  * Submodules
+
+  * lmaps.core.client module
+
+  * lmaps.core.config module
+
+  * lmaps.core.daemon module
+
+  * lmaps.core.data module
+
+  * lmaps.core.handlers module
+
+  * lmaps.core.manager module
+
+  * lmaps.core.shell module
+
+  * lmaps.core.tasks module
+
+  * lmaps.core.utils module
+
+  * lmaps.core.worker module
+
+  * Module contents
+
+* lmaps.plugins package
+
+  * Submodules
+
+  * lmaps.plugins.ansible_playbook module
+
+  * Module contents
+
+
+Module contents
+===============

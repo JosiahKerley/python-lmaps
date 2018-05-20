@@ -1,0 +1,481 @@
+lmaps.core package
+******************
+
+
+Submodules
+==========
+
+
+lmaps.core.client module
+========================
+
+class lmaps.core.client.Client(*args)
+
+   Bases: "lmaps.core.manager.Manager"
+
+   Handles RPC between the shell (or anyother) and the manager
+
+   manager_socket_type = 3
+
+   request(payload)
+
+      Handles the round trip of the payload to the manager and back
+      :param payload: :return:
+
+   zmq = <module 'zmq' from '/home/josiah/PycharmProjects/python-lmaps/env/lib/python2.7/site-packages/zmq/__init__.pyc'>
+
+
+lmaps.core.config module
+========================
+
+lmaps.core.config.extend_with_default(validator_class)
+
+   Handles applying default values to schemas :param validator_class:
+   Draft version class to validate with :return: Wrapped validator
+
+lmaps.core.config.find_config_file()
+
+   Use the list of paths and files above to find a config to use
+   :return: Filepath of config file
+
+lmaps.core.config.load_config(config_file='/home/josiah/lmaps.yaml')
+
+   Load the config as a dict from a given config file :param
+   config_file: Path to config file :return: Dict containing the
+   config
+
+
+lmaps.core.daemon module
+========================
+
+class lmaps.core.daemon.Daemon(config)
+
+   Bases: "object"
+
+   Handles running various threads needed on the host
+
+   config = {}
+
+   make_workers(count=1)
+
+      Create workers :param count: Number of workers to create
+
+   manage_workers()
+
+      Maintains the manager and worker threads
+
+   run()
+
+      Start the workers
+
+   start_workers()
+
+      Start the workers in their own threads
+
+   threads = []
+
+   workers = []
+
+
+lmaps.core.data module
+======================
+
+class lmaps.core.data.DataStore(*args, **kwargs)
+
+   Bases: "object"
+
+   Base class that provides the actual structures used by handlers
+
+   args = ()
+
+   exists(data)
+
+      Check if a store already contains data :param data: Data to
+      compare :return: Boolean as to whether or not it exists
+
+   kwargs = {}
+
+   new_store()
+
+      Create a new store in which to put/get state :return: Pointer to
+      the new store
+
+   rollback()
+
+   setup()
+
+      Prepare the instance :return:
+
+   state()
+
+      Get the summary of the current state :return: Dict of state
+      summary
+
+class lmaps.core.data.YamlFile(*args, **kwargs)
+
+   Bases: "lmaps.core.data.DataStore"
+
+   DataStore based on using merged YAML files to determine state
+
+   current_dir = 'current'
+
+   exists(data)
+
+      Check if data is already in a store based on a sample :param
+      data: :return: Boolean as to whether or not the data is already
+      in a store
+
+   get_current_store_dir()
+
+      Get the filepath to the “current” data stores :return: String
+      filepath
+
+   get_rollback_store_dir()
+
+      Get the filepath to the “rollback” data stores :return: String
+      filepath
+
+   new_store(data)
+
+      Provision a new store :param data: Dict of instamce :return:
+      String filepath
+
+   rollback()
+
+      Rollback the latest change by moving the last store from the
+      “current” directory to the “rollback” directory :return: Dict of
+      the data rolled back
+
+   rollback_dir = 'rollback'
+
+   setup()
+
+      Setup this instance to work with yaml files
+
+   state()
+
+      Get the current summary of the state :return: Dict of state
+
+   store_files()
+
+      Enumerate the “current” store’s files :return: List of filepaths
+
+   store_key = 'root'
+
+   store_root = None
+
+class lmaps.core.data.YamlKeyDict(*args, **kwargs)
+
+   Bases: "lmaps.core.data.YamlKeyList"
+
+   DataStore based on using YAML files to present state as a dict of
+   dicts
+
+   state(reverse=False)
+
+      DataStore based on using YAML files to present state as a merged
+      dict
+
+class lmaps.core.data.YamlKeyList(*args, **kwargs)
+
+   Bases: "lmaps.core.data.YamlList"
+
+   DataStore based on using YAML files to present state as a dict of
+   dicts
+
+   exists(data)
+
+      Check if data is already in a store based on a sample :param
+      data: :return: Boolean as to whether or not the data is already
+      in a store
+
+   state(reverse=False)
+
+      DataStore based on using YAML files to present state as a list
+      of dicts
+
+class lmaps.core.data.YamlList(*args, **kwargs)
+
+   Bases: "lmaps.core.data.YamlFile"
+
+   DataStore based on using YAML files to present state as a list of
+   dicts
+
+   exists(data)
+
+      Check if data is already in a store based on a sample :param
+      data: :return: Boolean as to whether or not the data is already
+      in a store
+
+   state(reverse=False)
+
+      Get the current summary of the state :param reverse: whether or
+      not the state needs to be reversed :return: List of instances
+
+
+lmaps.core.handlers module
+==========================
+
+class lmaps.core.handlers.Handler(**kwargs)
+
+   Bases: "object"
+
+   Base class for handling /anything/
+
+   context = None
+
+   setup()
+
+      Handles setting up this instance
+
+class lmaps.core.handlers.ManagerHandler(**kwargs)
+
+   Bases: "lmaps.core.handlers.Handler"
+
+   The handler used by the manager to get requests from clients and
+   farm out work for workers
+
+   client_request(request)
+
+      Handle an incoming request from a client :param request: The
+      request from the client :return: A response to the client
+
+   create_or_apply(request)
+
+      Handle a request from the client to create or apply instances
+      :param request: The request from the client :return: A response
+      to the client
+
+class lmaps.core.handlers.UnitHandler(**kwargs)
+
+   Bases: "lmaps.core.handlers.Handler"
+
+   Base class for unit handlers
+
+
+lmaps.core.manager module
+=========================
+
+class lmaps.core.manager.Manager(worker_connection_uri, *args)
+
+   Bases: "lmaps.core.worker.Worker"
+
+   In charge of listening to clients and passing the requests to a
+   handler
+
+   manager_socket_type = 4
+
+   run_task(runnable, *args, **kwargs)
+
+      Takes a “runnable” method and args, marshalls them, and sends
+      them to a worker via the worker socket.  After sending, this
+      will wait for a response from the worker as the return from the
+      runnable. :param runnable: An unbound method/function/whatever
+      :return: return from the runnable that executed on the worker
+
+   setup_args(args)
+
+      Make sure we can connect to workers and bind our socket for
+      clients :param args: :return:
+
+   socket_type = 3
+
+   start()
+
+      Begin serving
+
+   zmq = <module 'zmq' from '/home/josiah/PycharmProjects/python-lmaps/env/lib/python2.7/site-packages/zmq/__init__.pyc'>
+
+
+lmaps.core.shell module
+=======================
+
+lmaps.core.shell.get_parser()
+
+   Get shell args for command line usage :return: argparse namespace
+
+lmaps.core.shell.print_response(msg, format='dict')
+
+   Prints dictionaries in a human readable way :param msg: message to
+   make human readable :param format: How to format the msg (i.e.
+   coercion strategy)
+
+lmaps.core.shell.start()
+
+   Start the CLI :param args: Argparse namespace
+
+
+lmaps.core.tasks module
+=======================
+
+Tasks that can be run on workers.
+
+lmaps.core.tasks.error_message(context, msg)
+
+   Cannot remember, maybe I was starting to setup a logging facility?
+   :param context: The runner’s instance :param msg: :return:
+
+lmaps.core.tasks.get_worker_config(context)
+
+   Get the config from the worker’s perspective. :param context: The
+   runner’s instance :return:
+
+lmaps.core.tasks.get_worker_units(context)
+
+   Get installed units from the worker’s perspective. :param context:
+   The runner’s instance :return:
+
+lmaps.core.tasks.get_worker_units_instances(context, name)
+
+   Get instances of a unit based on the unit’s name. :param context:
+   The runner’s instance :param name: Name of unit :return:
+
+lmaps.core.tasks.no_work(context)
+
+   Do nothing. :param context: The runner’s instance :return: dict
+
+lmaps.core.tasks.rollback_worker_units_instances(context, name)
+
+   Perform a rollback on the workers local datastore. :param context:
+   The runner’s instance :param name: Name of unit :return:
+
+lmaps.core.tasks.stop_worker_thread(context)
+
+   Inform a worker that it needs to die. :param context: The runner’s
+   instance :return:
+
+lmaps.core.tasks.validate_instance(context, unit_name, instance)
+
+   Determine if a dict is a valid instance request based on the schema
+   of the unit as well as apply defaults from the schema. :param
+   context: The runner’s instance :param unit_name: String name of
+   unit :param instance: Dict the instance to validate :return: Dict
+   the valid and default-mixed-in instance
+
+
+lmaps.core.utils module
+=======================
+
+Handy functions and objects
+
+class lmaps.core.utils.OpenThread(method, args=None)
+
+   Bases: "lmaps.core.utils.Threader"
+
+   Same as above, but lets a thread keep running after exiting the
+   *with* statement.
+
+class lmaps.core.utils.Threader(method, args=None)
+
+   Bases: "object"
+
+   A basic thread manager that I reuse so much I should just polish it
+   up and throw it into PyPI. More or less lets you run a “runnable”
+   in a thread while something meaningful is happening in the main
+   thread and kills it when complete.  I usually use it for things
+   like API persistence on unrully/expirary endpoints that I don’t
+   want my interact logic to have to constantly poll something.  i.e.:
+   >>``<<` def maintain_connection_to_some_api():
+
+      while not amConnectedToSomeAPI:
+         client = connectBackToTheStoopidThing(with_these,credentials)
+
+   with Threader(maintain_connection_to_some_api) as API:
+      API.client(“don’t worry”) API.client(“be happy”)
+
+   >>``<<` after the last *API.client()* call in that example,
+   *maintain_connection_to_some_api()* is reaped silently.
+
+   args = None
+
+   isAlive()
+
+      Check to see if the thread is alive still. :return: Bool whether
+      or not it is
+
+   method = None
+
+   start()
+
+      Start the thread :return: Bool whether the thread is still alive
+
+   stop()
+
+      Stop the thread :return: Bool if the assertion passes of course
+      ;)
+
+   thread = None
+
+   threading = <module 'threading' from '/usr/lib64/python2.7/threading.pyc'>
+
+   time = <module 'time' from '/home/josiah/PycharmProjects/python-lmaps/env/lib64/python2.7/lib-dynload/timemodule.so'>
+
+lmaps.core.utils.client_message(message, level=0, extra={})
+
+   Create a properly formatted dict that can be handled by the client
+   shell when the manager replies. :param message: String the main
+   message :param level: Int more or the exit code you wish the client
+   to experience :param extra: Dict extra debug info if needed
+   :return: Dict the message to reply to the client with
+
+lmaps.core.utils.get_data_type_by_name(name)
+
+   For a given name, get a datatype. For example this is used to get
+   the datastore instance used by the handler based on the config in
+   the unit. :param name: String the datastore’s classname :return:
+   The class
+
+lmaps.core.utils.get_unit_by_name(name, config=None)
+
+   For a given config, return a unit by its name. :param name: String
+   name of the unit :param config: Dict the config to compare :return:
+   Dict the unit found
+
+lmaps.core.utils.validate_unit_instance(instance, unit)
+
+   Locally validate and mixin schema defaults for a given instance by
+   the unit to be applied. :param instance: Dict the instance to try
+   :param unit: Dict the unit containing the schema :return: Dict the
+   valid, mixed instance or an error containing what and why the
+   instance is not valid
+
+
+lmaps.core.worker module
+========================
+
+class lmaps.core.worker.Worker(worker_connection_uri, *args)
+
+   Bases: "object"
+
+   A generic worker
+
+   cloud = <module 'cloud' from '/home/josiah/PycharmProjects/python-lmaps/env/lib/python2.7/site-packages/cloud/__init__.pyc'>
+
+   pickle = <module 'pickle' from '/usr/lib64/python2.7/pickle.pyc'>
+
+   running = True
+
+   setup_args(args)
+
+      Not used here, but useful for more verbose workers :param args:
+      :return:
+
+   socket_type = 4
+
+   start()
+
+      Bind the worker socket and wait for work
+
+   stop()
+
+      Stop the private main loop logically :return:
+
+   time = <module 'time' from '/home/josiah/PycharmProjects/python-lmaps/env/lib64/python2.7/lib-dynload/timemodule.so'>
+
+   worker_connection_uri = None
+
+   zmq = <module 'zmq' from '/home/josiah/PycharmProjects/python-lmaps/env/lib/python2.7/site-packages/zmq/__init__.pyc'>
+
+
+Module contents
+===============

@@ -1,9 +1,0 @@
-By default, the configuration file paths are:
-lmaps.yaml
-.lmaps.yaml
-~/lmaps.yaml
-~/.lmaps.yaml
-/etc/lmaps/lmaps.yaml
-/etc/lmaps/.lmaps.yaml
-
-First found wins.
