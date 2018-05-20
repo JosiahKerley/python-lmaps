@@ -42,9 +42,17 @@ enter: vagrant-up
 	@vagrant ssh -c 'sudo su'
 
 sphinx:
-	@cd .sphinx; make html; make man; make text
+	@cd .sphinx; make singlehtml; make html; make man; make text
+
+man_setup:
+	@cp -rf .sphinx/_build/man ./
 
 docs_setup:
-	@cd docs; cp -rf ../.sphinx/_build/html/* ./; cp -rf ../.sphinx/_build/man ./
+	@cd docs; \
+	  rm -rf ./*; \
+	  cp -rf ../.sphinx/_build/html/* ./; \
+	  mv _static static; \
+	  find . -type f -exec grep -Iq . {} \; -and -print | \
+	    xargs -I {} sed -i 's/_static/static/g' {}
 
-docs: sphinx docs_setup
+docs: sphinx docs_setup man_setup

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>lmaps.core package &#8212; lmaps  documentation</title>
+    <title>lmaps.core package &#8212; Lightweight Management and Provisioning Service  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -40,7 +40,7 @@
 <span id="lmaps-core-client-module"></span><h2>lmaps.core.client module<a class="headerlink" href="#module-lmaps.core.client" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="lmaps.core.client.Client">
-<em class="property">class </em><code class="descclassname">lmaps.core.client.</code><code class="descname">Client</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/client.html#Client"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.client.Client" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.client.</code><code class="descname">Client</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.client.Client" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.manager.Manager" title="lmaps.core.manager.Manager"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.manager.Manager</span></code></a></p>
 <p>Handles RPC between the shell (or anyother) and the manager</p>
 <dl class="attribute">
@@ -50,7 +50,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.client.Client.request">
-<code class="descname">request</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/client.html#Client.request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.client.Client.request" title="Permalink to this definition">¶</a></dt>
+<code class="descname">request</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.client.Client.request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handles the round trip of the payload to the manager and back
 :param payload:
 :return:</p>
@@ -68,7 +68,7 @@
 <span id="lmaps-core-config-module"></span><h2>lmaps.core.config module<a class="headerlink" href="#module-lmaps.core.config" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="lmaps.core.config.extend_with_default">
-<code class="descclassname">lmaps.core.config.</code><code class="descname">extend_with_default</code><span class="sig-paren">(</span><em>validator_class</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/config.html#extend_with_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.config.extend_with_default" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.config.</code><code class="descname">extend_with_default</code><span class="sig-paren">(</span><em>validator_class</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.config.extend_with_default" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handles applying default values to schemas
 :param validator_class: Draft version class to validate with
 :return: Wrapped validator</p>
@@ -76,14 +76,14 @@
 
 <dl class="function">
 <dt id="lmaps.core.config.find_config_file">
-<code class="descclassname">lmaps.core.config.</code><code class="descname">find_config_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/config.html#find_config_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.config.find_config_file" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.config.</code><code class="descname">find_config_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.config.find_config_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the list of paths and files above to find a config to use
 :return: Filepath of config file</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="lmaps.core.config.load_config">
-<code class="descclassname">lmaps.core.config.</code><code class="descname">load_config</code><span class="sig-paren">(</span><em>config_file='/home/josiah/lmaps.yaml'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/config.html#load_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.config.load_config" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.config.</code><code class="descname">load_config</code><span class="sig-paren">(</span><em>config_file='/home/josiah/lmaps.yaml'</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.config.load_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the config as a dict from a given config file
 :param config_file: Path to config file
 :return: Dict containing the config</p>
@@ -94,7 +94,7 @@
 <span id="lmaps-core-daemon-module"></span><h2>lmaps.core.daemon module<a class="headerlink" href="#module-lmaps.core.daemon" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="lmaps.core.daemon.Daemon">
-<em class="property">class </em><code class="descclassname">lmaps.core.daemon.</code><code class="descname">Daemon</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/daemon.html#Daemon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.daemon.Daemon" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.daemon.</code><code class="descname">Daemon</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.daemon.Daemon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Handles running various threads needed on the host</p>
 <dl class="attribute">
@@ -104,26 +104,26 @@
 
 <dl class="method">
 <dt id="lmaps.core.daemon.Daemon.make_workers">
-<code class="descname">make_workers</code><span class="sig-paren">(</span><em>count=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/daemon.html#Daemon.make_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.daemon.Daemon.make_workers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">make_workers</code><span class="sig-paren">(</span><em>count=1</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.daemon.Daemon.make_workers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create workers
 :param count: Number of workers to create</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.daemon.Daemon.manage_workers">
-<code class="descname">manage_workers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/daemon.html#Daemon.manage_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.daemon.Daemon.manage_workers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">manage_workers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.daemon.Daemon.manage_workers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maintains the manager and worker threads</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.daemon.Daemon.run">
-<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/daemon.html#Daemon.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.daemon.Daemon.run" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.daemon.Daemon.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the workers</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.daemon.Daemon.start_workers">
-<code class="descname">start_workers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/daemon.html#Daemon.start_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.daemon.Daemon.start_workers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_workers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.daemon.Daemon.start_workers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the workers in their own threads</p>
 </dd></dl>
 
@@ -144,7 +144,7 @@
 <span id="lmaps-core-data-module"></span><h2>lmaps.core.data module<a class="headerlink" href="#module-lmaps.core.data" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="lmaps.core.data.DataStore">
-<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">DataStore</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#DataStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.DataStore" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">DataStore</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.DataStore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class that provides the actual structures used by handlers</p>
 <dl class="attribute">
@@ -154,7 +154,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.data.DataStore.exists">
-<code class="descname">exists</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#DataStore.exists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.DataStore.exists" title="Permalink to this definition">¶</a></dt>
+<code class="descname">exists</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.DataStore.exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a store already contains data
 :param data: Data to compare
 :return: Boolean as to whether or not it exists</p>
@@ -167,26 +167,26 @@
 
 <dl class="method">
 <dt id="lmaps.core.data.DataStore.new_store">
-<code class="descname">new_store</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#DataStore.new_store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.DataStore.new_store" title="Permalink to this definition">¶</a></dt>
+<code class="descname">new_store</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.DataStore.new_store" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new store in which to put/get state
 :return: Pointer to the new store</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.data.DataStore.rollback">
-<code class="descname">rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#DataStore.rollback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.DataStore.rollback" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.DataStore.rollback" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.data.DataStore.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#DataStore.setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.DataStore.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.DataStore.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prepare the instance
 :return:</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.data.DataStore.state">
-<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#DataStore.state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.DataStore.state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.DataStore.state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the summary of the current state
 :return: Dict of state summary</p>
 </dd></dl>
@@ -195,7 +195,7 @@
 
 <dl class="class">
 <dt id="lmaps.core.data.YamlFile">
-<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">YamlFile</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">YamlFile</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.data.DataStore" title="lmaps.core.data.DataStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.data.DataStore</span></code></a></p>
 <p>DataStore based on using merged YAML files to determine state</p>
 <dl class="attribute">
@@ -205,7 +205,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlFile.exists">
-<code class="descname">exists</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile.exists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile.exists" title="Permalink to this definition">¶</a></dt>
+<code class="descname">exists</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile.exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if data is already in a store based on a sample
 :param data:
 :return: Boolean as to whether or not the data is already in a store</p>
@@ -213,21 +213,21 @@
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlFile.get_current_store_dir">
-<code class="descname">get_current_store_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile.get_current_store_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile.get_current_store_dir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_current_store_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile.get_current_store_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the filepath to the “current” data stores
 :return: String filepath</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlFile.get_rollback_store_dir">
-<code class="descname">get_rollback_store_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile.get_rollback_store_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile.get_rollback_store_dir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_rollback_store_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile.get_rollback_store_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the filepath to the “rollback” data stores
 :return: String filepath</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlFile.new_store">
-<code class="descname">new_store</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile.new_store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile.new_store" title="Permalink to this definition">¶</a></dt>
+<code class="descname">new_store</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile.new_store" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provision a new store
 :param data: Dict of instamce
 :return: String filepath</p>
@@ -235,7 +235,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlFile.rollback">
-<code class="descname">rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile.rollback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile.rollback" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile.rollback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rollback the latest change by moving the last store from the “current” directory to the “rollback” directory
 :return: Dict of the data rolled back</p>
 </dd></dl>
@@ -247,20 +247,20 @@
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlFile.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile.setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup this instance to work with yaml files</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlFile.state">
-<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile.state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile.state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile.state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current summary of the state
 :return: Dict of state</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlFile.store_files">
-<code class="descname">store_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlFile.store_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlFile.store_files" title="Permalink to this definition">¶</a></dt>
+<code class="descname">store_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlFile.store_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enumerate the “current” store’s files
 :return: List of filepaths</p>
 </dd></dl>
@@ -279,12 +279,12 @@
 
 <dl class="class">
 <dt id="lmaps.core.data.YamlKeyDict">
-<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">YamlKeyDict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlKeyDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlKeyDict" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">YamlKeyDict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlKeyDict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.data.YamlKeyList" title="lmaps.core.data.YamlKeyList"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.data.YamlKeyList</span></code></a></p>
 <p>DataStore based on using YAML files to present state as a dict of dicts</p>
 <dl class="method">
 <dt id="lmaps.core.data.YamlKeyDict.state">
-<code class="descname">state</code><span class="sig-paren">(</span><em>reverse=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlKeyDict.state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlKeyDict.state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">state</code><span class="sig-paren">(</span><em>reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlKeyDict.state" title="Permalink to this definition">¶</a></dt>
 <dd><p>DataStore based on using YAML files to present state as a merged dict</p>
 </dd></dl>
 
@@ -292,12 +292,12 @@
 
 <dl class="class">
 <dt id="lmaps.core.data.YamlKeyList">
-<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">YamlKeyList</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlKeyList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlKeyList" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">YamlKeyList</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlKeyList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.data.YamlList" title="lmaps.core.data.YamlList"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.data.YamlList</span></code></a></p>
 <p>DataStore based on using YAML files to present state as a dict of dicts</p>
 <dl class="method">
 <dt id="lmaps.core.data.YamlKeyList.exists">
-<code class="descname">exists</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlKeyList.exists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlKeyList.exists" title="Permalink to this definition">¶</a></dt>
+<code class="descname">exists</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlKeyList.exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if data is already in a store based on a sample
 :param data:
 :return: Boolean as to whether or not the data is already in a store</p>
@@ -305,7 +305,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlKeyList.state">
-<code class="descname">state</code><span class="sig-paren">(</span><em>reverse=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlKeyList.state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlKeyList.state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">state</code><span class="sig-paren">(</span><em>reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlKeyList.state" title="Permalink to this definition">¶</a></dt>
 <dd><p>DataStore based on using YAML files to present state as a list of dicts</p>
 </dd></dl>
 
@@ -313,12 +313,12 @@
 
 <dl class="class">
 <dt id="lmaps.core.data.YamlList">
-<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">YamlList</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlList" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.data.</code><code class="descname">YamlList</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.data.YamlFile" title="lmaps.core.data.YamlFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.data.YamlFile</span></code></a></p>
 <p>DataStore based on using YAML files to present state as a list of dicts</p>
 <dl class="method">
 <dt id="lmaps.core.data.YamlList.exists">
-<code class="descname">exists</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlList.exists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlList.exists" title="Permalink to this definition">¶</a></dt>
+<code class="descname">exists</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlList.exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if data is already in a store based on a sample
 :param data:
 :return: Boolean as to whether or not the data is already in a store</p>
@@ -326,7 +326,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.data.YamlList.state">
-<code class="descname">state</code><span class="sig-paren">(</span><em>reverse=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/data.html#YamlList.state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.data.YamlList.state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">state</code><span class="sig-paren">(</span><em>reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.data.YamlList.state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current summary of the state
 :param reverse: whether or not the state needs to be reversed
 :return: List of instances</p>
@@ -339,7 +339,7 @@
 <span id="lmaps-core-handlers-module"></span><h2>lmaps.core.handlers module<a class="headerlink" href="#module-lmaps.core.handlers" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="lmaps.core.handlers.Handler">
-<em class="property">class </em><code class="descclassname">lmaps.core.handlers.</code><code class="descname">Handler</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/handlers.html#Handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.handlers.Handler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.handlers.</code><code class="descname">Handler</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.handlers.Handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for handling /anything/</p>
 <dl class="attribute">
@@ -349,7 +349,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.handlers.Handler.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/handlers.html#Handler.setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.handlers.Handler.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.handlers.Handler.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handles setting up this instance</p>
 </dd></dl>
 
@@ -357,12 +357,12 @@
 
 <dl class="class">
 <dt id="lmaps.core.handlers.ManagerHandler">
-<em class="property">class </em><code class="descclassname">lmaps.core.handlers.</code><code class="descname">ManagerHandler</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/handlers.html#ManagerHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.handlers.ManagerHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.handlers.</code><code class="descname">ManagerHandler</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.handlers.ManagerHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.handlers.Handler" title="lmaps.core.handlers.Handler"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.handlers.Handler</span></code></a></p>
 <p>The handler used by the manager to get requests from clients and farm out work for workers</p>
 <dl class="method">
 <dt id="lmaps.core.handlers.ManagerHandler.client_request">
-<code class="descname">client_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/handlers.html#ManagerHandler.client_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.handlers.ManagerHandler.client_request" title="Permalink to this definition">¶</a></dt>
+<code class="descname">client_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.handlers.ManagerHandler.client_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle an incoming request from a client
 :param request: The request from the client
 :return: A response to the client</p>
@@ -370,7 +370,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.handlers.ManagerHandler.create_or_apply">
-<code class="descname">create_or_apply</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/handlers.html#ManagerHandler.create_or_apply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.handlers.ManagerHandler.create_or_apply" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_or_apply</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.handlers.ManagerHandler.create_or_apply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle a request from the client to create or apply instances
 :param request: The request from the client
 :return: A response to the client</p>
@@ -380,7 +380,7 @@
 
 <dl class="class">
 <dt id="lmaps.core.handlers.UnitHandler">
-<em class="property">class </em><code class="descclassname">lmaps.core.handlers.</code><code class="descname">UnitHandler</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/handlers.html#UnitHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.handlers.UnitHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.handlers.</code><code class="descname">UnitHandler</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.handlers.UnitHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.handlers.Handler" title="lmaps.core.handlers.Handler"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.handlers.Handler</span></code></a></p>
 <p>Base class for unit handlers</p>
 </dd></dl>
@@ -390,7 +390,7 @@
 <span id="lmaps-core-manager-module"></span><h2>lmaps.core.manager module<a class="headerlink" href="#module-lmaps.core.manager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="lmaps.core.manager.Manager">
-<em class="property">class </em><code class="descclassname">lmaps.core.manager.</code><code class="descname">Manager</code><span class="sig-paren">(</span><em>worker_connection_uri</em>, <em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/manager.html#Manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.manager.Manager" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.manager.</code><code class="descname">Manager</code><span class="sig-paren">(</span><em>worker_connection_uri</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.manager.Manager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.worker.Worker" title="lmaps.core.worker.Worker"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.worker.Worker</span></code></a></p>
 <p>In charge of listening to clients and passing the requests to a handler</p>
 <dl class="attribute">
@@ -400,7 +400,7 @@
 
 <dl class="method">
 <dt id="lmaps.core.manager.Manager.run_task">
-<code class="descname">run_task</code><span class="sig-paren">(</span><em>runnable</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/manager.html#Manager.run_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.manager.Manager.run_task" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run_task</code><span class="sig-paren">(</span><em>runnable</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.manager.Manager.run_task" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a “runnable” method and args, marshalls them, and sends them
 to a worker via the worker socket.  After sending, this will wait
 for a response from the worker as the return from the runnable.
@@ -410,7 +410,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="method">
 <dt id="lmaps.core.manager.Manager.setup_args">
-<code class="descname">setup_args</code><span class="sig-paren">(</span><em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/manager.html#Manager.setup_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.manager.Manager.setup_args" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup_args</code><span class="sig-paren">(</span><em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.manager.Manager.setup_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make sure we can connect to workers and bind our socket for clients
 :param args:
 :return:</p>
@@ -423,7 +423,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="method">
 <dt id="lmaps.core.manager.Manager.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/manager.html#Manager.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.manager.Manager.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.manager.Manager.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Begin serving</p>
 </dd></dl>
 
@@ -439,14 +439,14 @@ for a response from the worker as the return from the runnable.
 <span id="lmaps-core-shell-module"></span><h2>lmaps.core.shell module<a class="headerlink" href="#module-lmaps.core.shell" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="lmaps.core.shell.get_parser">
-<code class="descclassname">lmaps.core.shell.</code><code class="descname">get_parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/shell.html#get_parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.shell.get_parser" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.shell.</code><code class="descname">get_parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.shell.get_parser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get shell args for command line usage
 :return: argparse namespace</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="lmaps.core.shell.print_response">
-<code class="descclassname">lmaps.core.shell.</code><code class="descname">print_response</code><span class="sig-paren">(</span><em>msg</em>, <em>format='dict'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/shell.html#print_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.shell.print_response" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.shell.</code><code class="descname">print_response</code><span class="sig-paren">(</span><em>msg</em>, <em>format='dict'</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.shell.print_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints dictionaries in a human readable way
 :param msg: message to make human readable
 :param format: How to format the msg (i.e. coercion strategy)</p>
@@ -454,7 +454,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="function">
 <dt id="lmaps.core.shell.start">
-<code class="descclassname">lmaps.core.shell.</code><code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/shell.html#start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.shell.start" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.shell.</code><code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.shell.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the CLI
 :param args: Argparse namespace</p>
 </dd></dl>
@@ -465,7 +465,7 @@ for a response from the worker as the return from the runnable.
 <p>Tasks that can be run on workers.</p>
 <dl class="function">
 <dt id="lmaps.core.tasks.error_message">
-<code class="descclassname">lmaps.core.tasks.</code><code class="descname">error_message</code><span class="sig-paren">(</span><em>context</em>, <em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/tasks.html#error_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.tasks.error_message" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.tasks.</code><code class="descname">error_message</code><span class="sig-paren">(</span><em>context</em>, <em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.tasks.error_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cannot remember, maybe I was starting to setup a logging facility?
 :param context: The runner’s instance
 :param msg:
@@ -474,7 +474,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="function">
 <dt id="lmaps.core.tasks.get_worker_config">
-<code class="descclassname">lmaps.core.tasks.</code><code class="descname">get_worker_config</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/tasks.html#get_worker_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.tasks.get_worker_config" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.tasks.</code><code class="descname">get_worker_config</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.tasks.get_worker_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the config from the worker’s perspective.
 :param context: The runner’s instance
 :return:</p>
@@ -482,7 +482,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="function">
 <dt id="lmaps.core.tasks.get_worker_units">
-<code class="descclassname">lmaps.core.tasks.</code><code class="descname">get_worker_units</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/tasks.html#get_worker_units"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.tasks.get_worker_units" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.tasks.</code><code class="descname">get_worker_units</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.tasks.get_worker_units" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get installed units from the worker’s perspective.
 :param context: The runner’s instance
 :return:</p>
@@ -490,7 +490,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="function">
 <dt id="lmaps.core.tasks.get_worker_units_instances">
-<code class="descclassname">lmaps.core.tasks.</code><code class="descname">get_worker_units_instances</code><span class="sig-paren">(</span><em>context</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/tasks.html#get_worker_units_instances"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.tasks.get_worker_units_instances" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.tasks.</code><code class="descname">get_worker_units_instances</code><span class="sig-paren">(</span><em>context</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.tasks.get_worker_units_instances" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get instances of a unit based on the unit’s name.
 :param context: The runner’s instance
 :param name: Name of unit
@@ -499,7 +499,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="function">
 <dt id="lmaps.core.tasks.no_work">
-<code class="descclassname">lmaps.core.tasks.</code><code class="descname">no_work</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/tasks.html#no_work"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.tasks.no_work" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.tasks.</code><code class="descname">no_work</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.tasks.no_work" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do nothing.
 :param context: The runner’s instance
 :return: dict</p>
@@ -507,7 +507,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="function">
 <dt id="lmaps.core.tasks.rollback_worker_units_instances">
-<code class="descclassname">lmaps.core.tasks.</code><code class="descname">rollback_worker_units_instances</code><span class="sig-paren">(</span><em>context</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/tasks.html#rollback_worker_units_instances"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.tasks.rollback_worker_units_instances" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.tasks.</code><code class="descname">rollback_worker_units_instances</code><span class="sig-paren">(</span><em>context</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.tasks.rollback_worker_units_instances" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform a rollback on the workers local datastore.
 :param context: The runner’s instance
 :param name: Name of unit
@@ -516,7 +516,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="function">
 <dt id="lmaps.core.tasks.stop_worker_thread">
-<code class="descclassname">lmaps.core.tasks.</code><code class="descname">stop_worker_thread</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/tasks.html#stop_worker_thread"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.tasks.stop_worker_thread" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.tasks.</code><code class="descname">stop_worker_thread</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.tasks.stop_worker_thread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inform a worker that it needs to die.
 :param context: The runner’s instance
 :return:</p>
@@ -524,7 +524,7 @@ for a response from the worker as the return from the runnable.
 
 <dl class="function">
 <dt id="lmaps.core.tasks.validate_instance">
-<code class="descclassname">lmaps.core.tasks.</code><code class="descname">validate_instance</code><span class="sig-paren">(</span><em>context</em>, <em>unit_name</em>, <em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/tasks.html#validate_instance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.tasks.validate_instance" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.tasks.</code><code class="descname">validate_instance</code><span class="sig-paren">(</span><em>context</em>, <em>unit_name</em>, <em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.tasks.validate_instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine if a dict is a valid instance request based on the schema of the unit
 as well as apply defaults from the schema.
 :param context: The runner’s instance
@@ -539,7 +539,7 @@ as well as apply defaults from the schema.
 <p>Handy functions and objects</p>
 <dl class="class">
 <dt id="lmaps.core.utils.OpenThread">
-<em class="property">class </em><code class="descclassname">lmaps.core.utils.</code><code class="descname">OpenThread</code><span class="sig-paren">(</span><em>method</em>, <em>args=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#OpenThread"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.OpenThread" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.utils.</code><code class="descname">OpenThread</code><span class="sig-paren">(</span><em>method</em>, <em>args=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.OpenThread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lmaps.core.utils.Threader" title="lmaps.core.utils.Threader"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmaps.core.utils.Threader</span></code></a></p>
 <p>Same as above, but lets a thread keep running
 after exiting the <cite>with</cite> statement.</p>
@@ -547,7 +547,7 @@ after exiting the <cite>with</cite> statement.</p>
 
 <dl class="class">
 <dt id="lmaps.core.utils.Threader">
-<em class="property">class </em><code class="descclassname">lmaps.core.utils.</code><code class="descname">Threader</code><span class="sig-paren">(</span><em>method</em>, <em>args=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#Threader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.Threader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.utils.</code><code class="descname">Threader</code><span class="sig-paren">(</span><em>method</em>, <em>args=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.Threader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A basic thread manager that I reuse so much
 I should just polish it up and throw it into PyPI.
@@ -580,7 +580,7 @@ after the last <cite>API.client()</cite> call in that example,
 
 <dl class="method">
 <dt id="lmaps.core.utils.Threader.isAlive">
-<code class="descname">isAlive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#Threader.isAlive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.Threader.isAlive" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isAlive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.Threader.isAlive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check to see if the thread is alive still.
 :return: Bool whether or not it is</p>
 </dd></dl>
@@ -592,14 +592,14 @@ after the last <cite>API.client()</cite> call in that example,
 
 <dl class="method">
 <dt id="lmaps.core.utils.Threader.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#Threader.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.Threader.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.Threader.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the thread
 :return: Bool whether the thread is still alive</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.utils.Threader.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#Threader.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.Threader.stop" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.Threader.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the thread
 :return: Bool if the assertion passes of course ;)</p>
 </dd></dl>
@@ -623,7 +623,7 @@ after the last <cite>API.client()</cite> call in that example,
 
 <dl class="function">
 <dt id="lmaps.core.utils.client_message">
-<code class="descclassname">lmaps.core.utils.</code><code class="descname">client_message</code><span class="sig-paren">(</span><em>message</em>, <em>level=0</em>, <em>extra={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#client_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.client_message" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.utils.</code><code class="descname">client_message</code><span class="sig-paren">(</span><em>message</em>, <em>level=0</em>, <em>extra={}</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.client_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a properly formatted dict that can be handled
 by the client shell when the manager replies.
 :param message: String the main message
@@ -634,7 +634,7 @@ by the client shell when the manager replies.
 
 <dl class="function">
 <dt id="lmaps.core.utils.get_data_type_by_name">
-<code class="descclassname">lmaps.core.utils.</code><code class="descname">get_data_type_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#get_data_type_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.get_data_type_by_name" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.utils.</code><code class="descname">get_data_type_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.get_data_type_by_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>For a given name, get a datatype.
 For example this is used to get the datastore instance
 used by the handler based on the config in the unit.
@@ -644,7 +644,7 @@ used by the handler based on the config in the unit.
 
 <dl class="function">
 <dt id="lmaps.core.utils.get_unit_by_name">
-<code class="descclassname">lmaps.core.utils.</code><code class="descname">get_unit_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#get_unit_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.get_unit_by_name" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.utils.</code><code class="descname">get_unit_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>config=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.get_unit_by_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>For a given config, return a unit by its name.
 :param name: String name of the unit
 :param config: Dict the config to compare
@@ -653,7 +653,7 @@ used by the handler based on the config in the unit.
 
 <dl class="function">
 <dt id="lmaps.core.utils.validate_unit_instance">
-<code class="descclassname">lmaps.core.utils.</code><code class="descname">validate_unit_instance</code><span class="sig-paren">(</span><em>instance</em>, <em>unit</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/utils.html#validate_unit_instance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.utils.validate_unit_instance" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lmaps.core.utils.</code><code class="descname">validate_unit_instance</code><span class="sig-paren">(</span><em>instance</em>, <em>unit</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.utils.validate_unit_instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Locally validate and mixin schema defaults
 for a given instance by the unit to be applied.
 :param instance: Dict the instance to try
@@ -666,7 +666,7 @@ for a given instance by the unit to be applied.
 <span id="lmaps-core-worker-module"></span><h2>lmaps.core.worker module<a class="headerlink" href="#module-lmaps.core.worker" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="lmaps.core.worker.Worker">
-<em class="property">class </em><code class="descclassname">lmaps.core.worker.</code><code class="descname">Worker</code><span class="sig-paren">(</span><em>worker_connection_uri</em>, <em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/worker.html#Worker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.worker.Worker" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lmaps.core.worker.</code><code class="descname">Worker</code><span class="sig-paren">(</span><em>worker_connection_uri</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.worker.Worker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A generic worker</p>
 <dl class="attribute">
@@ -686,7 +686,7 @@ for a given instance by the unit to be applied.
 
 <dl class="method">
 <dt id="lmaps.core.worker.Worker.setup_args">
-<code class="descname">setup_args</code><span class="sig-paren">(</span><em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/worker.html#Worker.setup_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.worker.Worker.setup_args" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup_args</code><span class="sig-paren">(</span><em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.worker.Worker.setup_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Not used here, but useful for more verbose workers
 :param args:
 :return:</p>
@@ -699,13 +699,13 @@ for a given instance by the unit to be applied.
 
 <dl class="method">
 <dt id="lmaps.core.worker.Worker.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/worker.html#Worker.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.worker.Worker.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.worker.Worker.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bind the worker socket and wait for work</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="lmaps.core.worker.Worker.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lmaps/core/worker.html#Worker.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lmaps.core.worker.Worker.stop" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmaps.core.worker.Worker.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the private main loop logically
 :return:</p>
 </dd></dl>
@@ -792,7 +792,7 @@ for a given instance by the unit to be applied.
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2018, Author.
+      &copy;2018, Josiah Kerley.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>

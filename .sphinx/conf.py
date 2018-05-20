@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'lmaps'
-copyright = u'2018, Author'
-author = u'Author'
+project = u'Lightweight Management and Provisioning Service'
+copyright = u'2018, Josiah Kerley'
+author = u'Josiah Kerley'
 
 # The short X.Y version
 version = u''

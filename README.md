@@ -12,7 +12,7 @@ pip install lmaps
 ```
 
 ## Overview
-![System Architecture](docs/graphics/sysarch.png)
+![System Architecture](.readmeimg/sysarch.png)
 
 ## Example use cases
 
