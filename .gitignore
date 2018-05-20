@@ -1,0 +1,8 @@
+.idea
+venv
+env
+buildenv
+.vimrc
+.config
+lmaps.yaml
+.vagrant

@@ -1,0 +1,16 @@
+---
+meta:
+  name: example
+  data_type: YamlKeyList
+  store_key: test
+  store_root: ./store_root
+handler:
+  name: example_ansible
+  type: ansible_playbook
+  args:
+    playbook: ./examples/tests/ansible_playbook/example.yaml
+  params:
+    additionalProperties: false
+    properties:
+      someparam:
+        type: string

@@ -1,0 +1,6 @@
+pbr
+setuptools
+wheel
+nose
+ansible
+virtualenv

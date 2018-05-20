@@ -1,0 +1,37 @@
+---
+meta:
+  name: packages
+  data_type: YamlKeyList
+  store_key: packages
+  store_root: ./store_root
+handler:
+  name: ansible_managed_packages
+  type: ansible_playbook
+  args:
+    playbook: ./examples/tests/ansible_playbook/packages.yaml
+  params:
+    additionalProperties: false
+    properties:
+      host:
+        type: string
+      port:
+        type: integer
+        default: 587
+        minimum: 0
+        maximum: 65535
+      username:
+        type: string
+        pattern: "^[A-Za-z]*@[a-z]+.[a-z]+$"
+      password:
+        type: string
+      to:
+        type: string
+        pattern: "* <[A-Za-z]*@[a-z]+.[a-z]+>$"
+      subject:
+        type: string
+        default: An email from lMaPS
+        maxLength: 255
+      body:
+        type: string
+        default: |
+          A change has occured and been applied on {{ inventory_hostname }}.

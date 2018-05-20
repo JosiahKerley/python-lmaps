@@ -1,0 +1,7 @@
+- name: Install packages
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - package: name='{{ item }}' state=present
+      with_items: '{{ packages }}'

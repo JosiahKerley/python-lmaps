@@ -1,0 +1,18 @@
+---
+rpc:
+  manager_bind: ipc:///run/lmaps_manager.sock
+  worker_bind:  ipc:///run/lmaps_worker.sock
+units:
+  - meta:
+      name: site
+      data_type: YamlKeyList
+      store_key: lmaps
+      store_root: /var/lib/lmaps/site
+    handler:
+      name: playbook
+      type: ansible_playbook
+      args:
+        playbook: /etc/ansible/site.yaml
+    params:
+      #additionalProperties: false
+      properties: {}

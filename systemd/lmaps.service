@@ -1,0 +1,13 @@
+[Unit]
+Description=lMaPS Daemon
+After=network.target
+
+[Service]
+PrivateTmp=true
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=/usr/bin/lmaps -D
+
+[Install]
+WantedBy=multi-user.target

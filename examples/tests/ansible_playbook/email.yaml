@@ -1,0 +1,15 @@
+- name: Send emails
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Send an e-mail
+      mail:
+        host:     '{{ item.host }}'
+        port:     '{{ item.port }}'
+        username: '{{ item.username }}'
+        password: '{{ item.password }}'
+        to:       '{{ item.to }}'
+        subject:  '{{ item.subject }}'
+        body:     '{{ item.body }}'
+      with_items: '{{ emails_to_send }}'

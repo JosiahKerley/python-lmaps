@@ -1,0 +1,16 @@
+---
+meta:
+  name: packages
+  data_type: YamlKeyList
+  store_key: packages
+  store_root: ./store_root
+handler:
+  name: ansible_managed_packages
+  type: ansible_playbook
+  args:
+    playbook: ./examples/tests/ansible_playbook/packages.yaml
+  params:
+    additionalProperties: false
+    properties:
+      package:
+        type: string

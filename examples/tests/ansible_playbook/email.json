@@ -1,0 +1,9 @@
+{
+  "host":"smarthost.example.com",
+  "port":587,
+  "username":"example",
+  "password":"eXaMP!3",
+  "to":"Some Person <some.person@example.com>",
+  "subject":"This is an example",
+  "body":"This is an example of a valid instance that can be applied to a unit.\nIf there are defaults declared in the schema, they will be automatically applied if left out"
+}

@@ -1,0 +1,8 @@
+jsonschema
+pyyaml
+pluginbase
+ConfigParser
+paste
+cloud
+zmq
+
