@@ -3,7 +3,7 @@ import os
 import yaml
 from jsonschema import Draft4Validator, validators, validate, ValidationError
 
-
+## TODO: Implement `.d` unit config loading
 
 def extend_with_default(validator_class):
   '''
