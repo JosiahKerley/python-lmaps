@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import yaml
 from jsonschema import Draft4Validator, validators, validate, ValidationError

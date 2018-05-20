@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
   A basic example of running an ansible playbook as the unit type.
 Since the arguments of the config are not validated (IoC reasons)

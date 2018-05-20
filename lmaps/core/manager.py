@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from .tasks import *
 from .handlers import *
 from .worker import Worker

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # from pluginbase import PluginBase
 # plugin_base = PluginBase(package='maps.plugins')
 #

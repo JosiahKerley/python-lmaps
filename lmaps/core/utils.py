@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
 Handy functions and objects
 '''

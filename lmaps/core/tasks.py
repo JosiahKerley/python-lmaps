@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
 Tasks that can be run on workers.
 '''
