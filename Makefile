@@ -1,4 +1,5 @@
 .PHONY: clean veryclean test enter install docs
+htmldoc=html
 formats=zip
 ifeq ($(OS),Windows_NT)
   formats=msi,zip
@@ -50,7 +51,7 @@ man_setup:
 docs_setup:
 	@cd docs; \
 	  rm -rf ./*; \
-	  cp -rf ../.sphinx/_build/html/* ./; \
+	  cp -rf ../.sphinx/_build/$(htmldoc)/* ./; \
 	  mv _static static; \
 	  find . -type f -exec grep -Iq . {} \; -and -print | \
 	    xargs -I {} sed -i 's/_static/static/g' {}
