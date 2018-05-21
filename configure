@@ -49,5 +49,6 @@ cat > .config/configure.yaml << 'YAML'
         target: install-reqs
         chdir: '{{ build_dir }}'
 YAML
-ansible-playbook .config/configure.yaml && touch .vagrant/up.flag
+ansible-playbook .config/configure.yaml
+echo "export PBR_VERSION=`cat VERSION`" >> buildenv/bin/activate
 echo 'run `source buildenv/bin/activate` and `make` to build'

@@ -10,11 +10,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
 sudo bash << 'BASH'
 cd /vagrant
-#sed -i '/vagrant/d' /root/.bashrc'
 bash -c 'echo "cd /vagrant" >> /root/.bashrc'
-./configure
-make
-make install
+./configure && make && make test && make install
 BASH
   SHELL
 end

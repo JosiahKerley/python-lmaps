@@ -1,4 +1,5 @@
 .PHONY: clean veryclean test enter install docs
+export PBR_VERSION=$(shell cat VERSION)
 htmldoc=html
 formats=zip
 ifeq ($(OS),Windows_NT)
@@ -32,10 +33,10 @@ clean:
 	@rm -rf *.tmp *.pyc *.egg-info *.egg dist build examples/tests/ansible_playbook/*.retry .eggs `ls | grep -E 'lmaps-[0-9]+\.[0-9]+\.[0-9]+'`
 
 veryclean: clean
-	@vagrant destroy --force; rm -rf .vagrant buildenv
+	@vagrant destroy --force; rm -rf .vagrant buildenv; find lmaps -type f -name '*\.pyc' -delete; rm -rf `ls | grep -E 'lmaps\-'`
 
 .vagrant/up.flag:
-	@vagrant up
+	@vagrant up && touch .vagrant/up.flag
 
 vagrant-up: .vagrant/up.flag
 
@@ -61,4 +62,4 @@ docs: sphinx docs_setup man_setup
 distribute_pypi:
 	@python setup.py sdist upload -r lmaps
 
-distribute: distribute_pypi
+pypi: distribute_pypi
