@@ -19,6 +19,7 @@ class Client(Manager):
     self._context = self.zmq.Context()
     self._socket = self._context.socket(self.socket_type)
     self.setup_args(args)
+    self._socket.linger = 30*1000
 
   def request(self, payload, timeout=10):
     '''
@@ -26,6 +27,7 @@ class Client(Manager):
     :param payload:
     :return: Manager response
     '''
+    timeout = timeout*1000
     self._socket.connect(self.manager_uri)
     debug(payload, 'Sending payload to manager')
     self._socket.send_json(payload)
@@ -38,4 +40,4 @@ class Client(Manager):
       return response
     else:
       debug('Poller timed out')
-      client_message('Timed out after {} seconds'.format(timeout), level=1)
+      return client_message('Client request to manager timed out after {} seconds'.format(timeout/1000), level=1)

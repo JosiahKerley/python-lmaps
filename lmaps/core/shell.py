@@ -5,7 +5,7 @@ import json
 import yaml
 import argparse
 from lmaps.core import config
-from lmaps.core.utils import verbose, debug, fatal
+from lmaps.core.utils import verbose, debug, fatal, client_message
 from lmaps.core.client import Client
 
 manager_schema_config_path     = os.path.expanduser('~/.config/lmaps')
@@ -112,13 +112,22 @@ def discover_endpoint(args):
     fatal_message = """Got 'None' as a response when trying to discover against the manager,
     this is probably because the manager sent to response and a timeout occured.
     Is the manager running on the URI?"""
+    debug('Was unable to rx a response', fatal_message)
     fatal(fatal_message)
+  if 'level' in response:
+    if not response['level'] == 0:
+      debug(response, 'The message in the response is telling me to fail')
+      fatal(response['message'])
+  else:
+    raise Exception('No level was in the response')
   manager_schema_config_safe_filename = cfg['rpc']['manager_bind'].replace(':', '-').replace('/', '_')
   for path in [manager_schema_config_filepath,
                os.path.join(manager_schema_config_path, manager_schema_config_safe_filename)]:
     with open(path, 'w') as f:
       debug('Writing manager schema to {}'.format(path))
-      f.write(yaml.safe_dump(response['extra']))
+      file_content = yaml.safe_dump(response['extra'])
+      #print(json.dumps(client_message("Discovered endpoint as:", extra=file_content), indent=2))
+      f.write(file_content)
   return True
 
 

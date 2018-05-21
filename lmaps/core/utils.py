@@ -9,7 +9,7 @@ from lmaps.core.data import *
 
 
 def fatal(message='No fatal message was provided!  What a terrible developer!'):
-  print(message)
+  print('Fatal: '.format(str(message)))
   sys.exit(1)
 
 
