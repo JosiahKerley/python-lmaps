@@ -2,6 +2,7 @@
 rpc:
   manager_bind: ipc:///run/lmaps_manager.sock
   worker_bind:  ipc:///run/lmaps_worker.sock
+  timeout:      5*60
 units:
   - meta:
       name: site

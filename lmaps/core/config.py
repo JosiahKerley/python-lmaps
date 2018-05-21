@@ -39,6 +39,10 @@ config_schema = {
         "manager_bind",
       ],
       "properties": {
+        "timeout": {
+          "type": "integer",
+          "default": 5*60
+        },
         "manager_bind": {
           "type": "string",
           "pattern": "(tcp://.*:[0-9]+|ipc://.*|(pgm|epgm)://.*:.*:[0-9]+|inproc://.*)",

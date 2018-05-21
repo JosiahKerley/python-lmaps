@@ -8,6 +8,44 @@ from .config import load_config, validate, applySchemaDefaults, ValidationError
 from lmaps.core.data import *
 
 
+def fatal(message='No fatal message was provided!  What a terrible developer!'):
+  print(message)
+  sys.exit(1)
+
+
+def verbose(message):
+  if 'LMAPS_VERBOSE' in os.environ and bool(os.environ['LMAPS_VERBOSE']):
+    print(message)
+
+
+def debug(message, comment=None):
+  if 'LMAPS_DEBUG' in os.environ and bool(os.environ['LMAPS_DEBUG']):
+    import inspect                                     ## Insert hiesenbug rant here...
+    caller_stackframeptr = inspect.stack()[1]          ## I'm assuming this is a ptr (or some other interal record)
+    stack_frame_ref =  caller_stackframeptr[0]         ## This seems to be a datastructure containing what I'm looking for
+    frame_info = inspect.getframeinfo(stack_frame_ref) ## Not sure what cpython thinks a "frame" is in this context, but I get what I want, so I'm not complaining
+    caller_filepath = frame_info.filename
+    caller_function = frame_info.function
+    caller_fileline = frame_info.lineno
+    if comment == None:
+      comment = message
+    print('''
+DEBUG:
+  scriptfile:\t{}
+  fileline:\t{}
+  function:\t{}
+  comment:\t{}
+  message:\t{}
+'''.format(
+        str(caller_filepath),
+        str(caller_fileline),
+        str(caller_function),
+        str(comment),
+        str(message)
+      )
+    )
+
+
 def client_message(message, level=0, extra={}):
   '''
   Create a properly formatted dict that can be handled
@@ -17,7 +55,9 @@ def client_message(message, level=0, extra={}):
   :param extra: Dict extra debug info if needed
   :return: Dict the message to reply to the client with
   '''
-  return {"message":str(message), "level": level, "extra":extra}
+  message = {"message":str(message), "level": level, "extra":extra}
+  debug(message)
+  return message
 
 
 def get_unit_by_name(name, config=None):
@@ -34,6 +74,7 @@ def get_unit_by_name(name, config=None):
     if unit['meta']['name'] == name:
       canidate_unit = unit
   assert not canidate_unit == {}
+  debug(canidate_unit)
   return canidate_unit
 
 
@@ -50,6 +91,7 @@ def validate_unit_instance(instance, unit):
   except ValidationError as e:
     return e
   applySchemaDefaults(unit['params']).validate(instance)
+  debug(instance)
   return instance
 
 
@@ -61,7 +103,9 @@ def get_data_type_by_name(name):
   :param name: String the datastore's classname
   :return: The class
   '''
-  return getattr(sys.modules[__name__], name)
+  module = getattr(sys.modules[__name__], name)
+  debug(module)
+  return module
 
 
 class Threader(object):

@@ -21,7 +21,7 @@ install-reqs:
 	@pip install -r requirements.txt
 
 uninstall:
-	@pip freeze | grep lmaps | xargs -I {} pip uninstall {} --yes
+	@pip uninstall lmaps --yes
 
 test:
 	@nosetests

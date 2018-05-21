@@ -1,0 +1,17 @@
+#!/bin/bash
+#make uninstall
+#make install
+#systemctl restart lmaps &
+#timeout 10 journalctl -fu lmaps -o cat &
+#timeout 5 lmaps --discover ipc:///run/lmaps_manager.sock
+
+export LMAPS_DEBUG=true
+rm -rf ~/.config/lmaps/
+make uninstall
+kill `ps -ef | grep lmaps | awk '/D/{print $2}'`
+sleep 5
+make install
+clear
+timeout 5 lmaps --discover ipc:///run/lmaps_manager.sock
+lmaps -h
+lmaps -l

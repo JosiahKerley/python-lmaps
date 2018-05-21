@@ -1,0 +1,3 @@
+---
+rpc:
+  manager_bind: ipc:///run/lmaps_manager.sock
