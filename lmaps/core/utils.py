@@ -9,16 +9,32 @@ from lmaps.core.data import *
 
 
 def fatal(message='No fatal message was provided!  What a terrible developer!'):
+  '''
+  A general purpose fatal error function
+  :param message: String message to print if a fatal error is called
+  :return: None
+  '''
   print('Fatal: '.format(str(message)))
   sys.exit(1)
 
 
 def verbose(message):
+  '''
+  A verbose message
+  :param message: String a verbose CLI message
+  :return: None
+  '''
   if 'LMAPS_VERBOSE' in os.environ and bool(os.environ['LMAPS_VERBOSE']):
     print(message)
 
 
 def debug(message, comment=None):
+  '''
+  An even more verbose message
+  :param message: String the base message
+  :param comment: String an extra "comment" on the debug output
+  :return: None
+  '''
   if 'LMAPS_DEBUG' in os.environ and bool(os.environ['LMAPS_DEBUG']):
     import inspect                                     ## Insert hiesenbug rant here...
     caller_stackframeptr = inspect.stack()[1]          ## I'm assuming this is a ptr (or some other interal record)
