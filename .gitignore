@@ -6,3 +6,4 @@ buildenv
 .config
 lmaps.yaml
 .vagrant
+.run.me

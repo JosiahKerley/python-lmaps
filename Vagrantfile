@@ -11,7 +11,11 @@ Vagrant.configure(2) do |config|
 sudo bash << 'BASH'
 cd /vagrant
 bash -c 'echo "cd /vagrant" >> /root/.bashrc'
-./configure && make && make test && make install
+./configure && \
+  make install && \
+  mv /etc/lmaps/lmaps.yaml.example /etc/lmaps/lmaps.yaml && \
+  systemctl enable lmaps && \
+  systemctl restart lmaps
 BASH
   SHELL
 end

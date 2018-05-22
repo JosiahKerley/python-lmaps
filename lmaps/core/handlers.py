@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+import json
 from .tasks import *
 from .utils import *
 from pluginbase import PluginBase
@@ -49,10 +50,17 @@ class ManagerHandler(Handler):
     :param request: The request from the client
     :return: A response to the client
     '''
+
     if not type(request) == type({}):
       return self.runner(error_message, client_message('Request must me a dictionary.', level=1))
-    if request['list_units']:
-      return self.runner(get_worker_units)
+
+    if 'discover' in request and request['discover']:
+      if 'schema' in request['discover']:
+        return client_message('Manager schema', extra=self.context.schema)
+      else:
+        return client_message('Unable to determine how to discover "{}"'.format(request['discover']), level=1)
+
+    if 'list_units' in request and request['list_units']: return self.runner(get_worker_units)
     if request['show_summary']:
       return self.runner(get_worker_units_instances,request['unit_name'])
     if request['create'] or request['apply']:

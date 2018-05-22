@@ -58,6 +58,12 @@ args_schema = {
 
 ## Runnable to send to workers to run the ansible-playbook command
 def run_playbook(*args, **kwargs):
+  '''
+  Runs a playbook on a worker
+  :param args: args
+  :param kwargs: kwargs
+  :return:
+  '''
   cmd = 'ansible-playbook "{}" --extra-vars="@{}"'.format(kwargs['playbook'], kwargs['varfile'])
   try:
     results = commands.getstatusoutput(cmd)

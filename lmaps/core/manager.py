@@ -13,6 +13,47 @@ class Manager(Worker):
   socket_type = zmq.REQ
   manager_socket_type = zmq.REP
 
+  schema = {
+    "title": 'Lightweight Management and Provisioning Service',
+    "properties": {
+      "create": {
+        "title": "Create an instance",
+        "type": "boolean",
+        "default": False
+      },
+      "apply": {
+        "title": "Apply the instance(s)",
+        "type": "boolean",
+        "default": False
+      },
+      "rollback": {
+        "title": "Remove the newest instance from the unit",
+        "type": "boolean",
+        "default": False
+      },
+      "unit": {
+        "title": "Name of unit on which actions are performed",
+        "type": "string",
+        "default": None
+      },
+      "instance": {
+        "title": "Yaml file with which to perform operations",
+        "type": "string",
+        "default": None
+      },
+      "list_units": {
+        "title": "List units",
+        "type": "boolean",
+        "default": False
+      },
+      "show_summary": {
+        "title": "Get the current summarized state of a unit",
+        "type": "boolean",
+        "default": False
+      },
+    }
+  }
+
   def setup_args(self, args):
     '''
     Make sure we can connect to workers and bind our socket for clients
